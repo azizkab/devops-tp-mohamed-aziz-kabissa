@@ -11,6 +11,14 @@ const placementRoutes = require("./routes/placementRoutes");
 
 const app = express();
 
+app.get("/health", (req, res) => {
+  res.status(200).json({
+    status: "OK",
+    service: "backend",
+    timestamp: new Date().toISOString(),
+  });
+});
+
 app.use(
   cors({
     origin: "http://localhost:3000",

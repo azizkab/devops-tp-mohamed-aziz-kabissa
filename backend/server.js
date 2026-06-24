@@ -14,3 +14,11 @@ app.listen(PORT, () => {
   startFormationAlertsCron();
   startRushReminderCron();
 });
+
+app.get("/health", (req, res) => {
+  res.status(200).json({
+    status: "OK",
+    service: "backend",
+    timestamp: new Date().toISOString(),
+  });
+});
