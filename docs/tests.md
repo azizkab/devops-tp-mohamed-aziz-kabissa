@@ -202,5 +202,5 @@ coverage/lcov-report/index.html
 ```
 
 Capture d'écran du rapport :
-![Rapport de couverture](images/coverage-report.png)
+![Rapport de couverture](images/coverture.png)
 
