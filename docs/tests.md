@@ -184,3 +184,23 @@ cd backend
 npm test
 npm run test:coverage
 ```
+
+
+
+## Rapport de couverture
+
+La couverture de tests est générée avec Jest :
+
+```bash
+npm run test:coverage
+```
+
+Le rapport HTML est disponible dans :
+
+```txt
+coverage/lcov-report/index.html
+```
+
+Capture d'écran du rapport :
+![Rapport de couverture](images/coverage-report.png)
+
