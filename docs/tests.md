@@ -31,3 +31,6 @@ Les routes REST doivent retourner :
 * Jest
 * Supertest
 * Tests automatisés CI/CD
+## Tests futurs
+
+Les tests automatisés utiliseront Jest et Supertest.
