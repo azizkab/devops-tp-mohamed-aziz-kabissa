@@ -30,3 +30,8 @@ Base de données :
 * GitHub Actions
 * Déploiement automatique
 * Monitoring
+
+
+## CI/CD
+
+Les futurs déploiements seront automatisés avec GitHub Actions.
