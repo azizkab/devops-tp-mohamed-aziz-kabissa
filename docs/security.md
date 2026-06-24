@@ -27,3 +27,7 @@ L'application utilise JWT pour sécuriser les accès.
 * Utiliser des mots de passe forts
 * Limiter les droits utilisateurs
 * Vérifier les permissions côté backend
+
+## Rotation des secrets
+
+Les secrets doivent être renouvelés régulièrement.
