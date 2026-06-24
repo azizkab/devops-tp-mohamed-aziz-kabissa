@@ -6,12 +6,12 @@ L'objectif est d'identifier les fonctionnalités critiques de l'application et d
 
 Le projet concerne une application de gestion opérationnelle restaurant avec :
 
-* authentification
-* briefs / débriefs
-* formations équipiers
-* génération de PDF
-* placement équipe
-* notifications Discord
+- authentification
+- briefs / débriefs
+- formations équipiers
+- génération de PDF
+- placement équipe
+- notifications Discord
 
 ## Fonctionnalité critique 1 — Authentification et rôles
 
@@ -26,8 +26,8 @@ Vérifier que le middleware d'authentification refuse une requête sans token JW
 
 Résultat attendu :
 
-* statut HTTP 401
-* message d'erreur clair
+- statut HTTP 401
+- message d'erreur clair
 
 ### Test d'intégration
 
@@ -35,8 +35,8 @@ Vérifier qu'un utilisateur connecté avec un rôle `MANAGER` peut accéder aux 
 
 Résultat attendu :
 
-* statut HTTP 200
-* données retournées correctement
+- statut HTTP 200
+- données retournées correctement
 
 ### Test e2e bonus
 
@@ -60,22 +60,22 @@ Vérifier que le service PDF génère un chemin de fichier valide après créati
 
 Résultat attendu :
 
-* un fichier PDF est créé
-* le chemin retourné n'est pas vide
+- un fichier PDF est créé
+- le chemin retourné n'est pas vide
 
 ### Test d'intégration
 
 Vérifier qu'une requête POST de création de brief crée :
 
-* un brief en base
-* un PDF associé
-* une notification Discord
+- un brief en base
+- un PDF associé
+- une notification Discord
 
 Résultat attendu :
 
-* statut HTTP 201
-* objet brief retourné
-* chemin PDF présent
+- statut HTTP 201
+- objet brief retourné
+- chemin PDF présent
 
 ### Test e2e bonus
 
@@ -99,23 +99,23 @@ Vérifier que le calcul du score d'une formation retourne 100 % quand toutes les
 
 Résultat attendu :
 
-* score = 100
-* formation validée
+- score = 100
+- formation validée
 
 ### Test d'intégration
 
 Vérifier qu'une validation de formation crée :
 
-* une validation en base
-* une date de validation
-* une date d'expiration si la formation est périodique
-* un PDF signé
+- une validation en base
+- une date de validation
+- une date d'expiration si la formation est périodique
+- un PDF signé
 
 Résultat attendu :
 
-* statut HTTP 200
-* validation enregistrée
-* `pdfRempliPath` présent
+- statut HTTP 200
+- validation enregistrée
+- `pdfRempliPath` présent
 
 ### Test e2e bonus
 
@@ -140,23 +140,23 @@ Vérifier que la fonction de formatage Discord ou image reçoit un placement val
 
 Résultat attendu :
 
-* contenu non vide
-* date et rush présents
+- contenu non vide
+- date et rush présents
 
 ### Test d'intégration
 
 Vérifier qu'un placement peut être :
 
-* créé
-* sauvegardé
-* récupéré dans l'historique
-* envoyé sur Discord
+- créé
+- sauvegardé
+- récupéré dans l'historique
+- envoyé sur Discord
 
 Résultat attendu :
 
-* statut HTTP 201 à la création
-* statut HTTP 200 à la récupération
-* placement présent dans l'historique
+- statut HTTP 201 à la création
+- statut HTTP 200 à la récupération
+- placement présent dans l'historique
 
 ### Test e2e bonus
 
@@ -185,8 +185,6 @@ npm test
 npm run test:coverage
 ```
 
-
-
 ## Rapport de couverture
 
 La couverture de tests est générée avec Jest :
@@ -202,5 +200,4 @@ coverage/lcov-report/index.html
 ```
 
 Capture d'écran du rapport :
-![Rapport de couverture](images/couverture.png)
-
+![Rapport de couverture](images/couverture.PNG)
