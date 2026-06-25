@@ -22,7 +22,9 @@ const createBrief = async (req, res) => {
     const connectedUser = await User.findById(req.user.id);
 
     if (!connectedUser) {
-      return res.status(404).json({ message: "Utilisateur connecté introuvable" });
+      return res
+        .status(404)
+        .json({ message: "Utilisateur connecté introuvable" });
     }
 
     const briefData = {
@@ -156,11 +158,7 @@ const createDebrief = async (req, res) => {
 
     const debrief = await Debrief.create(debriefData);
 
-    console.log(
-      "DEBRIEF MANAGER :",
-      debrief.managerPrenom,
-      debrief.managerNom
-    );
+    console.log("DEBRIEF MANAGER :", debrief.managerPrenom, debrief.managerNom);
 
     const start = new Date(debrief.dateRush);
     start.setHours(0, 0, 0, 0);

@@ -15,19 +15,19 @@ router.use(authMiddleware);
 router.get(
   "/rush",
   roleMiddleware("ADMIN", "DIRECTEUR", "MANAGER"),
-  getRushStats
+  getRushStats,
 );
 
 router.get(
   "/my-best-shift",
   roleMiddleware("ADMIN", "DIRECTEUR", "MANAGER"),
-  getMyBestShift
+  getMyBestShift,
 );
 
 router.get(
   "/leaderboard",
   roleMiddleware("ADMIN", "DIRECTEUR", "MANAGER"),
-  getManagersLeaderboard
+  getManagersLeaderboard,
 );
 
 module.exports = router;

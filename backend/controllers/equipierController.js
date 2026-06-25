@@ -66,7 +66,7 @@ const updateEquipier = async (req, res) => {
         telephone: telephone || "",
         email: email || "",
       },
-      { new: true }
+      { new: true },
     );
 
     if (!equipier) {

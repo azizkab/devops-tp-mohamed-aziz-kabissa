@@ -75,13 +75,15 @@ const fillFormationPDF = async ({
   const config = pdfCoordinates[formationCode];
 
   if (!config) {
-    throw new Error(`Coordonnées PDF manquantes pour la formation : ${formationCode}`);
+    throw new Error(
+      `Coordonnées PDF manquantes pour la formation : ${formationCode}`,
+    );
   }
 
   const originalPdfPath = path.join(
     __dirname,
     "../uploads/formations",
-    config.fileName
+    config.fileName,
   );
 
   if (!fs.existsSync(originalPdfPath)) {
@@ -93,7 +95,7 @@ const fillFormationPDF = async ({
 
   const outputPath = path.join(
     completedDir,
-    `${formationCode}-${equipier._id}-${Date.now()}.pdf`
+    `${formationCode}-${equipier._id}-${Date.now()}.pdf`,
   );
 
   const pdfBytes = fs.readFileSync(originalPdfPath);
@@ -103,7 +105,8 @@ const fillFormationPDF = async ({
   const pages = pdfDoc.getPages();
 
   const equipierName = `${equipier.prenom || ""} ${equipier.nom || ""}`.trim();
-  const formateurName = `${formateur.prenom || ""} ${formateur.nom || ""}`.trim();
+  const formateurName =
+    `${formateur.prenom || ""} ${formateur.nom || ""}`.trim();
 
   drawChecks(pages, font, reponses, config.checks);
 
@@ -111,7 +114,12 @@ const fillFormationPDF = async ({
   drawTextAt(pages, font, formateurName || "Formateur", config.formateur);
   drawTextAt(pages, font, equipierName || "Équipier", config.equipier);
 
-  await drawImageAt(pdfDoc, pages, signatureFormateur, config.signatureFormateur);
+  await drawImageAt(
+    pdfDoc,
+    pages,
+    signatureFormateur,
+    config.signatureFormateur,
+  );
   await drawImageAt(pdfDoc, pages, signatureEquipier, config.signatureEquipier);
 
   const completedPdfBytes = await pdfDoc.save();

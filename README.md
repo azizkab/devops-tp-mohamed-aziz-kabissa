@@ -1,7 +1,11 @@
 # devops-tp-mohamed-aziz-kabissa
 # Gestion Restaurant
 
-Application web de gestion opérationnelle pour restaurant permettant le suivi des briefs, débriefs, formations, placements d'équipe et indicateurs de performance.
+Application web de gestion opérationnelle pour restaurant permettant le suivi des briefs, débriefs, formations, placements d'équipe et indicateurs de performance,développée dans le cadre du TP DevOps.
+
+
+[![CI](https://github.com/azizkab/devops-tp-mohamed-aziz-kabissa/actions/workflows/ci.yml/badge.svg)](https://github.com/azizkab/devops-tp-mohamed-aziz-kabissa/actions/workflows/ci.yml)
+
 
 ## Stack
 
@@ -92,7 +96,37 @@ La documentation technique est disponible dans :
 * docs/tests.md
 * docs/security.md
 
+## Lancer le projet
+
+### Prérequis
+
+* Docker Desktop
+* Git
+
+### Installation
+
+```bash
+git clone https://github.com/azizkab/devops-tp-mohamed-aziz-kabissa.git
+cd devops-tp-mohamed-aziz-kabissa
+cp .env.example .env
+docker compose up --build
+```
+
+### Accès à l'application
+
+Une fois les conteneurs démarrés :
+
+* Backend : http://localhost:5000
+* Vérification de l'API : http://localhost:5000/health
+* Base de données : MongoDB (conteneur Docker)
+
+### Arrêter l'application
+
+```bash
+docker compose down
+```
+
+
 ## Auteur
 
 Aziz Kabissa
-test protection branche

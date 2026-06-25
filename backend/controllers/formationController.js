@@ -35,7 +35,7 @@ const getEquipiersWithProgress = async (req, res) => {
           formationsValidees: validations.filter((v) => v.validee).length,
           totalFormations: formationsCatalogue.length,
         };
-      })
+      }),
     );
 
     return res.status(200).json(result);
@@ -63,7 +63,7 @@ const getEquipierFormations = async (req, res) => {
 
     const formations = formationsCatalogue.map((formation) => {
       const validation = validations.find(
-        (v) => v.formationCode === formation.code
+        (v) => v.formationCode === formation.code,
       );
 
       return {
@@ -155,8 +155,8 @@ const validateFormation = async (req, res) => {
       dateExpiration = new Date();
 
       dateExpiration.setMonth(
-        dateExpiration.getMonth() + formation.renewalMonths
-    );
+        dateExpiration.getMonth() + formation.renewalMonths,
+      );
     }
 
     let pdfRempliPath = null;
@@ -197,7 +197,7 @@ const validateFormation = async (req, res) => {
       {
         returnDocument: "after",
         upsert: true,
-      }
+      },
     );
 
     const validations = await FormationValidation.find({ equipierId });
@@ -235,7 +235,7 @@ const getFormationPDF = async (req, res) => {
     const filePath = path.join(
       __dirname,
       "../uploads/formations",
-      formation.pdfFile
+      formation.pdfFile,
     );
 
     return res.sendFile(filePath);
@@ -263,7 +263,7 @@ const getFormationDashboard = async (req, res) => {
 
     const equipiersStats = equipiers.map((equipier) => {
       const equipierValidations = validations.filter(
-        (v) => v.equipierId.toString() === equipier._id.toString()
+        (v) => v.equipierId.toString() === equipier._id.toString(),
       );
 
       const validees = equipierValidations.filter((v) => v.validee).length;
@@ -293,7 +293,7 @@ const getFormationDashboard = async (req, res) => {
 
     const formationsStats = formationsCatalogue.map((formation) => {
       const formationValidations = validations.filter(
-        (v) => v.formationCode === formation.code && v.validee
+        (v) => v.formationCode === formation.code && v.validee,
       );
 
       const tauxValidation = totalEquipiers
@@ -386,7 +386,7 @@ const downloadCompletedFormationPDF = async (req, res) => {
 
     return res.download(
       validation.pdfRempliPath,
-      `${validation.formationCode}-${validation.equipierId}.pdf`
+      `${validation.formationCode}-${validation.equipierId}.pdf`,
     );
   } catch (error) {
     console.error("ERREUR DOWNLOAD PDF FORMATION :", error);

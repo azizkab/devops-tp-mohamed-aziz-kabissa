@@ -41,7 +41,7 @@ const placementSchema = new mongoose.Schema(
     auteurNom: String,
     auteurPrenom: String,
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
 module.exports = mongoose.model("Placement", placementSchema);

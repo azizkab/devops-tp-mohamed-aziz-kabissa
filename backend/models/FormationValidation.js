@@ -24,7 +24,6 @@ const formationValidationSchema = new mongoose.Schema(
         valide: Boolean,
       },
     ],
-    
 
     score: {
       type: Number,
@@ -36,7 +35,7 @@ const formationValidationSchema = new mongoose.Schema(
       default: false,
     },
 
-       signatureEquipier: {
+    signatureEquipier: {
       type: String,
       required: true,
     },
@@ -54,9 +53,12 @@ const formationValidationSchema = new mongoose.Schema(
     },
     dateExpiration: {
       type: Date,
-    },  
+    },
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
-module.exports = mongoose.model("FormationValidation", formationValidationSchema);
+module.exports = mongoose.model(
+  "FormationValidation",
+  formationValidationSchema,
+);

@@ -10,7 +10,7 @@ const generateToken = (user) => {
       role: user.role,
     },
     process.env.JWT_SECRET,
-    { expiresIn: "7d" }
+    { expiresIn: "7d" },
   );
 };
 
@@ -40,10 +40,7 @@ const login = async (req, res) => {
       });
     }
 
-    const motDePasseValide = await bcrypt.compare(
-      motDePasse,
-      user.motDePasse
-    );
+    const motDePasseValide = await bcrypt.compare(motDePasse, user.motDePasse);
 
     if (!motDePasseValide) {
       return res.status(401).json({

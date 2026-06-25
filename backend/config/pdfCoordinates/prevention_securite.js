@@ -11,7 +11,7 @@ module.exports = {
     y: 209,
     width: 125,
     height: 42,
-  },  
+  },
 
   signatureEquipier: {
     page: 2,

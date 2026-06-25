@@ -116,7 +116,8 @@ const formationsCatalogue = [
   {
     code: "salle_bornes",
     titre: "Salle à manger et bornes",
-    pdfFile: "FOR-Verification_salle_a_manger_et_bornes_de_prise_de_commandes.pdf",
+    pdfFile:
+      "FOR-Verification_salle_a_manger_et_bornes_de_prise_de_commandes.pdf",
     questions: [
       "Respect hygiène",
       "Salle et bornes propres et prêtes",
@@ -225,7 +226,8 @@ const formationsCatalogue = [
   {
     code: "mtsri",
     titre: "MTSRI / SRIW",
-    pdfFile: "FOR-Verification_Milieu_de_Travail_Securisant_Respectueux_et_Inclusif_MTSRI-SRIW.pdf",
+    pdfFile:
+      "FOR-Verification_Milieu_de_Travail_Securisant_Respectueux_et_Inclusif_MTSRI-SRIW.pdf",
     questions: [
       "Critères discriminatoires connus",
       "Harcèlement moral compris",
