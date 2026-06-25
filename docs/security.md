@@ -52,3 +52,66 @@ Ces outils permettent :
 **Capture d'écran :**
 
 ![Code security and analysis](images/security.png)
+
+
+
+# Risques DevOps
+
+## R1 — Exposition d'un secret (JWT, MongoDB ou Discord)
+
+* **Probabilité :** Moyenne
+* **Impact :** Critique (accès non autorisé à l'application ou à la base de données)
+* **Action :**
+
+  * Stocker les secrets dans un fichier `.env`
+  * Utiliser les GitHub Secrets dans les workflows CI
+  * Ne jamais versionner le fichier `.env`
+  * Effectuer une rotation des secrets en cas de fuite
+
+---
+
+## R2 — Indisponibilité de la base de données MongoDB
+
+* **Probabilité :** Faible
+* **Impact :** Critique (application inutilisable)
+* **Action :**
+
+  * Utiliser un volume Docker pour conserver les données
+  * Ajouter un `healthcheck` dans `docker-compose.yml`
+  * Vérifier la connexion au démarrage du backend
+
+---
+
+## R3 — Pipeline CI en échec
+
+* **Probabilité :** Moyenne
+* **Impact :** Élevé (déploiement d'un code non fiable)
+* **Action :**
+
+  * Exécuter automatiquement les tests unitaires
+  * Lancer ESLint avant chaque fusion
+  * Interdire les merges si la CI échoue
+
+---
+
+## R4 — Dépendances contenant des vulnérabilités
+
+* **Probabilité :** Moyenne
+* **Impact :** Élevé (failles de sécurité connues)
+* **Action :**
+
+  * Activer Dependabot
+  * Mettre à jour régulièrement les dépendances
+  * Vérifier les alertes GitHub Security
+
+---
+
+## R5 — Perte des données utilisateur
+
+* **Probabilité :** Faible
+* **Impact :** Critique (perte des briefs, débriefs, formations et utilisateurs)
+* **Action :**
+
+  * Utiliser des volumes Docker persistants
+  * Mettre en place des sauvegardes régulières de MongoDB
+  * Tester les procédures de restauration des données
