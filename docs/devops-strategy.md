@@ -36,3 +36,7 @@ Base de données :
 
 Les futurs déploiements seront automatisés avec GitHub Actions.
 Le pipeline GitHub Actions est opérationnel.
+
+## Optimisation du pipeline
+
+Le workflow GitHub Actions utilise le cache npm afin de réutiliser les dépendances téléchargées entre deux exécutions. Cela réduit le temps d'exécution des pipelines.
