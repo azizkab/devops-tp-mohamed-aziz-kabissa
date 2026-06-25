@@ -35,3 +35,4 @@ Base de données :
 ## CI/CD
 
 Les futurs déploiements seront automatisés avec GitHub Actions.
+Le pipeline GitHub Actions est opérationnel.
