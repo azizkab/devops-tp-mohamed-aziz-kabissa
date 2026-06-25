@@ -31,3 +31,24 @@ L'application utilise JWT pour sécuriser les accès.
 ## Rotation des secrets
 
 Les secrets doivent être renouvelés régulièrement.
+
+
+## Sécurité du dépôt GitHub
+
+Les fonctionnalités de sécurité GitHub ont été activées afin d'améliorer la protection du projet.
+
+Fonctionnalités activées :
+
+* Dependabot Alerts
+* Dependabot Security Updates
+* Secret Scanning
+
+Ces outils permettent :
+
+* la détection automatique des dépendances vulnérables ;
+* la proposition de mises à jour de sécurité ;
+* la détection des secrets accidentellement publiés dans le dépôt.
+
+**Capture d'écran :**
+
+![Code security and analysis](images/security.png)
