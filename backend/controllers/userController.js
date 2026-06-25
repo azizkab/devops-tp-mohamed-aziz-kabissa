@@ -95,7 +95,7 @@ const updateUserRole = async (req, res) => {
     const user = await User.findByIdAndUpdate(
       id,
       { role },
-      { new: true }
+      { new: true },
     ).select("-motDePasse");
 
     if (!user) {

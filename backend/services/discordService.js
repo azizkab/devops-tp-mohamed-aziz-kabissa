@@ -63,7 +63,12 @@ const buildDebriefContent = (debrief, analysis) => {
   ].join("\n");
 };
 
-const sendPDFToDiscord = async (filePath, data, type = "brief", analysis = null) => {
+const sendPDFToDiscord = async (
+  filePath,
+  data,
+  type = "brief",
+  analysis = null,
+) => {
   try {
     if (!process.env.DISCORD_WEBHOOK_URL) {
       console.warn("DISCORD_WEBHOOK_URL manquant dans .env");
@@ -81,7 +86,7 @@ const sendPDFToDiscord = async (filePath, data, type = "brief", analysis = null)
       "payload_json",
       JSON.stringify({
         content,
-      })
+      }),
     );
 
     form.append("file", fs.createReadStream(filePath), {
@@ -96,7 +101,7 @@ const sendPDFToDiscord = async (filePath, data, type = "brief", analysis = null)
   } catch (error) {
     console.error(
       "Erreur Discord :",
-      error.response?.data || error.message || error
+      error.response?.data || error.message || error,
     );
   }
 };
@@ -115,7 +120,7 @@ const sendDiscordMessage = async (content) => {
   } catch (error) {
     console.error(
       "Erreur message Discord :",
-      error.response?.data || error.message || error
+      error.response?.data || error.message || error,
     );
   }
 };
@@ -133,7 +138,7 @@ const sendImageToDiscord = async ({ content, imageBuffer, filename }) => {
       "payload_json",
       JSON.stringify({
         content,
-      })
+      }),
     );
 
     form.append("file", imageBuffer, {
@@ -149,7 +154,7 @@ const sendImageToDiscord = async ({ content, imageBuffer, filename }) => {
   } catch (error) {
     console.error(
       "Erreur image Discord :",
-      error.response?.data || error.message || error
+      error.response?.data || error.message || error,
     );
   }
 };

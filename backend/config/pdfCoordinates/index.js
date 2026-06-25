@@ -6,7 +6,4 @@ module.exports = {
   caisse: require("./caisse"),
   initiation_assemblage: require("./initiation_assemblage"),
   prevention_securite: require("./prevention_securite"),
-  
-
-  
 };

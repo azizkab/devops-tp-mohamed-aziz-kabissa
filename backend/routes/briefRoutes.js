@@ -23,62 +23,62 @@ router.use(authMiddleware);
 router.post(
   "/brief",
   roleMiddleware("ADMIN", "DIRECTEUR", "MANAGER"),
-  createBrief
+  createBrief,
 );
 
 router.get(
   "/brief",
   roleMiddleware("ADMIN", "DIRECTEUR", "MANAGER"),
-  getBriefs
+  getBriefs,
 );
 
 router.put(
   "/brief/:id",
   roleMiddleware("ADMIN", "DIRECTEUR", "MANAGER"),
-  updateBrief
+  updateBrief,
 );
 
 router.delete(
   "/brief/:id",
   roleMiddleware("ADMIN", "DIRECTEUR", "MANAGER"),
-  deleteBrief
+  deleteBrief,
 );
 
 router.get(
   "/brief/:id/pdf",
   roleMiddleware("ADMIN", "DIRECTEUR", "MANAGER"),
-  downloadBriefPDF
+  downloadBriefPDF,
 );
 
 // DEBRIEFS
 router.post(
   "/debrief",
   roleMiddleware("ADMIN", "DIRECTEUR", "MANAGER"),
-  createDebrief
+  createDebrief,
 );
 
 router.get(
   "/debrief",
   roleMiddleware("ADMIN", "DIRECTEUR", "MANAGER"),
-  getDebriefs
+  getDebriefs,
 );
 
 router.put(
   "/debrief/:id",
   roleMiddleware("ADMIN", "DIRECTEUR", "MANAGER"),
-  updateDebrief
+  updateDebrief,
 );
 
 router.delete(
   "/debrief/:id",
   roleMiddleware("ADMIN", "DIRECTEUR", "MANAGER"),
-  deleteDebrief
+  deleteDebrief,
 );
 
 router.get(
   "/debrief/:id/pdf",
   roleMiddleware("ADMIN", "DIRECTEUR", "MANAGER"),
-  downloadDebriefPDF
+  downloadDebriefPDF,
 );
 
 module.exports = router;

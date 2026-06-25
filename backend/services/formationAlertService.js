@@ -41,12 +41,12 @@ const checkFormationExpirations = async () => {
       if (daysLeft < 0) {
         alerts.push(
           `❌ **${equipier.prenom} ${equipier.nom}** — Prévention sécurité expirée depuis ${Math.abs(
-            daysLeft
-          )} jour(s)`
+            daysLeft,
+          )} jour(s)`,
         );
       } else if (daysLeft <= 30) {
         alerts.push(
-          `⚠️ **${equipier.prenom} ${equipier.nom}** — Prévention sécurité expire dans ${daysLeft} jour(s)`
+          `⚠️ **${equipier.prenom} ${equipier.nom}** — Prévention sécurité expire dans ${daysLeft} jour(s)`,
         );
       }
     }

@@ -11,8 +11,6 @@ const {
   getFormationDashboard,
   downloadCompletedFormationPDF,
   getEquipierFormationHistory,
-
-
 } = require("../controllers/formationController");
 
 const authMiddleware = require("../middleware/authMiddleware");
@@ -24,7 +22,7 @@ router.get(
   "/pdf/:formationCode",
   authMiddlewareQuery,
   roleMiddleware("ADMIN", "DIRECTEUR", "MANAGER", "FORMATEUR"),
-  getFormationPDF
+  getFormationPDF,
 );
 
 // Toutes les autres routes avec Authorization header
@@ -33,52 +31,51 @@ router.use(authMiddleware);
 router.get(
   "/catalogue",
   roleMiddleware("ADMIN", "DIRECTEUR", "MANAGER", "FORMATEUR"),
-  getFormationsCatalogue
+  getFormationsCatalogue,
 );
 
 router.get(
   "/equipiers",
   roleMiddleware("ADMIN", "DIRECTEUR", "MANAGER", "FORMATEUR"),
-  getEquipiersWithProgress
+  getEquipiersWithProgress,
 );
 router.get(
   "/dashboard",
   roleMiddleware("ADMIN", "DIRECTEUR", "MANAGER", "FORMATEUR"),
-  getFormationDashboard
+  getFormationDashboard,
 );
 
 router.get(
   "/equipier/:equipierId",
   roleMiddleware("ADMIN", "DIRECTEUR", "MANAGER", "FORMATEUR"),
-  getEquipierFormations
+  getEquipierFormations,
 );
-
 
 router.get(
   "/detail/:formationCode",
   roleMiddleware("ADMIN", "DIRECTEUR", "MANAGER", "FORMATEUR"),
-  getFormationDetail
+  getFormationDetail,
 );
 
 router.post(
   "/equipier/:equipierId/validate",
   roleMiddleware("ADMIN", "DIRECTEUR", "MANAGER", "FORMATEUR"),
-  validateFormation
+  validateFormation,
 );
 router.get(
   "/completed-pdf/:validationId",
   roleMiddleware("ADMIN", "DIRECTEUR", "MANAGER", "FORMATEUR"),
-  downloadCompletedFormationPDF
+  downloadCompletedFormationPDF,
 );
 router.get(
   "/equipier/:equipierId/history",
   roleMiddleware("ADMIN", "DIRECTEUR", "MANAGER", "FORMATEUR"),
-  getEquipierFormationHistory
+  getEquipierFormationHistory,
 );
 router.get(
   "/completed-pdf/:validationId",
   roleMiddleware("ADMIN", "DIRECTEUR", "MANAGER", "FORMATEUR"),
-  downloadCompletedFormationPDF
+  downloadCompletedFormationPDF,
 );
 
 module.exports = router;

@@ -19,42 +19,38 @@ router.use(authMiddleware);
 router.post(
   "/",
   roleMiddleware("ADMIN", "DIRECTEUR", "MANAGER"),
-  createPlacement
+  createPlacement,
 );
 
-router.get(
-  "/",
-  roleMiddleware("ADMIN", "DIRECTEUR", "MANAGER"),
-  getPlacements
-);
+router.get("/", roleMiddleware("ADMIN", "DIRECTEUR", "MANAGER"), getPlacements);
 
 router.get(
   "/:id",
   roleMiddleware("ADMIN", "DIRECTEUR", "MANAGER"),
-  getPlacementById
+  getPlacementById,
 );
 
 router.put(
   "/:id",
   roleMiddleware("ADMIN", "DIRECTEUR", "MANAGER"),
-  updatePlacement
+  updatePlacement,
 );
 
 router.delete(
   "/:id",
   roleMiddleware("ADMIN", "DIRECTEUR", "MANAGER"),
-  deletePlacement
+  deletePlacement,
 );
 
 router.post(
   "/:id/discord",
   roleMiddleware("ADMIN", "DIRECTEUR", "MANAGER"),
-  sendPlacementToDiscord
+  sendPlacementToDiscord,
 );
 router.post(
   "/:id/discord-image",
   roleMiddleware("ADMIN", "DIRECTEUR", "MANAGER"),
-  sendPlacementImageToDiscord
+  sendPlacementImageToDiscord,
 );
 
 module.exports = router;

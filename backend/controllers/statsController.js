@@ -77,17 +77,17 @@ const getRushStats = async (req, res) => {
 
     const totalCAReel = debriefs.reduce(
       (sum, d) => sum + (d.analyseQuart?.ca || 0),
-      0
+      0,
     );
 
     const totalTransactions = debriefs.reduce(
       (sum, d) => sum + (d.analyseQuart?.transaction || 0),
-      0
+      0,
     );
 
     const totalStaffing = debriefs.reduce(
       (sum, d) => sum + (d.analyseQuart?.staffing || 0),
-      0
+      0,
     );
 
     const moyenneCA = totalDebriefs
@@ -146,7 +146,8 @@ const getRushStats = async (req, res) => {
         id: debrief._id,
         dateRush: debrief.dateRush,
         rushDu: debrief.rushDu,
-        manager: `${debrief.managerPrenom || ""} ${debrief.managerNom || ""}`.trim(),
+        manager:
+          `${debrief.managerPrenom || ""} ${debrief.managerNom || ""}`.trim(),
         caBrief,
         caDebrief,
         ecartCA,
@@ -215,7 +216,6 @@ const getMyBestShift = async (req, res) => {
       error: error.message,
     });
   }
-
 };
 const getManagersLeaderboard = async (req, res) => {
   try {

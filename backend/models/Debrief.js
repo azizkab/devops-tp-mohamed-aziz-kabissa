@@ -60,7 +60,7 @@ const debriefSchema = new mongoose.Schema(
     detailFormation: String,
     remarque: String,
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
 module.exports = mongoose.model("Debrief", debriefSchema);

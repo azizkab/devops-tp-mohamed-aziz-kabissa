@@ -19,6 +19,10 @@ router.post("/", roleMiddleware("ADMIN", "DIRECTEUR"), createUser);
 
 router.patch("/:id/role", roleMiddleware("ADMIN", "DIRECTEUR"), updateUserRole);
 
-router.patch("/:id/toggle-status", roleMiddleware("ADMIN", "DIRECTEUR"), toggleUserStatus);
+router.patch(
+  "/:id/toggle-status",
+  roleMiddleware("ADMIN", "DIRECTEUR"),
+  toggleUserStatus,
+);
 
 module.exports = router;

@@ -10,10 +10,7 @@ const FormationValidation = require("../models/FormationValidation");
 const Equipier = require("../models/Equipier");
 const User = require("../models/User");
 
-const completedPdfDir = path.join(
-  __dirname,
-  "../uploads/formations-completed"
-);
+const completedPdfDir = path.join(__dirname, "../uploads/formations-completed");
 
 const cleanCompletedPDFs = () => {
   if (!fs.existsSync(completedPdfDir)) return;
@@ -39,9 +36,9 @@ const resetProductionData = async () => {
     await FormationValidation.deleteMany({});
     await Equipier.deleteMany({});
 
-    // Garde uniquement le comptes ADMIN 
+    // Garde uniquement le comptes ADMIN
     await User.deleteMany({
-      role: { $nin: ["ADMIN", ] },
+      role: { $nin: ["ADMIN"] },
     });
 
     cleanCompletedPDFs();

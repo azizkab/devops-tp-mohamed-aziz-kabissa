@@ -60,7 +60,7 @@ const briefSchema = new mongoose.Schema(
     objectifProduction: String,
     objectifFormation: String,
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
 module.exports = mongoose.model("Brief", briefSchema);

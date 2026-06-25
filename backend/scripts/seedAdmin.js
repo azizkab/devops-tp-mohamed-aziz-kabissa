@@ -33,10 +33,7 @@ const createAdmin = async () => {
     }
 
     // Hash mot de passe
-    const hashedPassword = await bcrypt.hash(
-      process.env.ADMIN_PASSWORD,
-      10
-    );
+    const hashedPassword = await bcrypt.hash(process.env.ADMIN_PASSWORD, 10);
 
     // Création admin
     await User.create({
