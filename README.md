@@ -3,6 +3,12 @@
 
 Application web de gestion opérationnelle pour restaurant permettant le suivi des briefs, débriefs, formations, placements d'équipe et indicateurs de performance.
 
+# DevOps TP - Mohamed Aziz Kabissa
+
+[![CI](https://github.com/azizkab/devops-tp-mohamed-aziz-kabissa/actions/workflows/ci.yml/badge.svg)](https://github.com/azizkab/devops-tp-mohamed-aziz-kabissa/actions/workflows/ci.yml)
+
+Application de gestion de restaurant développée dans le cadre du TP DevOps.
+
 ## Stack
 
 ### Frontend
