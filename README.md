@@ -95,3 +95,5 @@ La documentation technique est disponible dans :
 ## Auteur
 
 Aziz Kabissa
+
+Dernière mise à jour de la documentation CI.
