@@ -23,7 +23,7 @@
   "description": "Backend API for restaurant management application",
   "dependencies": {
     "@slack/web-api": "^7.15.1",
-    "axios": "^1.16.1",
+    "axios": "^1.18.1",
     "bcryptjs": "^3.0.3",
     "cors": "^2.8.6",
     "dotenv": "^17.3.1",
